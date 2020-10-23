@@ -19,7 +19,7 @@ jobs:
         id: sync
         uses: aormsby/Fork-Sync-With-Upstream-action@v2.0
         with:
-          github_token: ${{ secrets.UPTODATE }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           upstream_repository: TheAlgorithms/Python
           upstream_branch: master
           target_branch: autoUptodate
