@@ -20,8 +20,8 @@ jobs:
         with:
           github_token: ${{ secrets.UPTODATE }}
           upstream_repository: TheAlgorithms/Python
-          upstream_branch: master
-          target_branch: autoUptodate
+          upstream_branch: 'master'
+          target_branch: 'autoUptodate'
           git_pull_args: --ff-only
       - name: Check for new commits
         if: steps.sync.outputs.has-new-commits
