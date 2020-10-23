@@ -11,9 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: tgymnich/fork-sync@v1.2.1
+      - name: Checkout master
+        uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Fork Sync With Upstream
+        uses: aormsby/Fork-Sync-With-Upstream-action@v2.0
         with:
           github_token: ${{ secrets.UPTODATE }}
-          owner: TheAlgorithms
-          base: master
-          head: master
+          upstream_repository: TheAlgorithms/Python
+          upstream_branch: master
+          target_branch: master
+          git_pull_args: --ff-only
+      - name: Check for new commits
+        if: steps.sync.outputs.has-new-commits
+        run: echo "There were new commits."
