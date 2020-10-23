@@ -14,6 +14,6 @@ jobs:
       - uses: tgymnich/fork-sync@v1.2.1
         with:
           github_token: ${{ secrets.UPTODATE }}
-          owner: llvm
+          owner: TheAlgorithms
           base: master
           head: master
