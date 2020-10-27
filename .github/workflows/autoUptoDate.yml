@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: autoUptodate
+          github_token: ${{ secrets.UPTODATE }}
       - name: Fork Sync With Upstream
         id: sync
         uses: aormsby/Fork-Sync-With-Upstream-action@v2.0
