@@ -16,7 +16,6 @@ jobs:
         with:
           ref: autoUptodate
           github_token: ${{ secrets.UPTODATE }}
-          persist-credentials: false
       - name: Fork Sync With Upstream
         id: sync
         uses: aormsby/Fork-Sync-With-Upstream-action@v2.0
