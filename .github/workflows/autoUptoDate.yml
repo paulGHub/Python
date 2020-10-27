@@ -15,11 +15,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: autoUptodate
+          github_token: ${{ secrets.UPTODATE }}
+          persist-credentials: false
       - name: Fork Sync With Upstream
         id: sync
         uses: aormsby/Fork-Sync-With-Upstream-action@v2.0
-        with:
-          github_token: ${{ secrets.UPTODATE }}
+        with:          
           upstream_repository: TheAlgorithms/Python
           upstream_branch: master
           target_branch: autoUptodate
